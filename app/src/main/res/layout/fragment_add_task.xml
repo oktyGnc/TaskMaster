@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00A5AF"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:hint="Görev başlığını girin"
+        android:textColor="#2C2B2B"
+        app:layout_constraintBottom_toTopOf="@+id/textDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:text="Görev Başlığı"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textTitle2"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:text="Bitiş Tarihi"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextKatagori"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="228dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="Tarih Giriniz"
+        android:inputType="date"
+        android:textColor="#2C2B2B"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle2"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/editTextKatagori"
+        android:layout_width="232dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Katagori Giriniz"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textTitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle3"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textTitle3"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:text="Katagori"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextKatagori"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/editDescription"
+        android:layout_width="346dp"
+        android:layout_height="73dp"
+        android:hint="Görev açıklamasını girin"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:textColor="#2C2B2B"
+        app:layout_constraintBottom_toTopOf="@+id/textTitle3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:text="Görev Açıklaması"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00cccc "
+        android:text="Kaydet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
