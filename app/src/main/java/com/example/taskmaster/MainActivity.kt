@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
@@ -15,6 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -38,13 +40,37 @@ class MainActivity : AppCompatActivity(), AddTaskFragment.AddTaskListener {
         }
     }
 
+    private fun filterTasks(query: String) {
+        val queryLowerCase = query.toLowerCase()
+        for (i in 0 until taskListLayout.childCount) {
+            val cardView = taskListLayout.getChildAt(i) as CardView
+            val titleTextView = cardView.findViewById<TextView>(R.id.titleTextView)
+            val title = titleTextView.text.toString().toLowerCase()
+            if (title.contains(queryLowerCase)) {
+                cardView.visibility = View.VISIBLE
+            } else {
+                cardView.visibility = View.GONE
+            }
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
 
         val searchItem = menu.findItem(R.id.action_search)
         val searchView = searchItem?.actionView as SearchView
 
-        // Arama işlemlerini burada gerçekleştirin
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                // Arama sorgusu değiştiğinde yapılacak işlemleri burada gerçekleştirin
+                filterTasks(newText)
+                return true
+            }
+        })
 
         return true
     }
