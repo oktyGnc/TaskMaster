@@ -11,6 +11,7 @@ import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
@@ -62,6 +63,11 @@ class MainActivity : AppCompatActivity(), AddTaskFragment.AddTaskListener {
     @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onTaskAdded(title: String, description: String, date: String, katagori: String) {
 
+        if (title.isEmpty() || description.isEmpty() || date.isEmpty() || katagori.isEmpty()) {
+            // İçerik boş, Toast mesajı göster
+            Toast.makeText(this, "Görev bilgileri eksik", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         val cardView = layoutInflater.inflate(R.layout.task_cardview, taskListLayout, false)
 
